@@ -16,7 +16,7 @@ const jwt=require('jsonwebtoken')
 app.get('/',async(req,res)=>{
     try{
         const todos=await pool.query('SELECT * FROM todos')
-        res.json(todos.json)
+        res.json(todos)
     }
     catch(err){
         console.error(err);
