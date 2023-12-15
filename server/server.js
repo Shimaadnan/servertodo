@@ -12,8 +12,8 @@ const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken') 
 
 
-app.get('/',(req,res)=>res.send('hi'))
-app.get('/todos',async(req,res)=>{
+// app.get('/',(req,res)=>res.send('hi'))
+app.get('/',async(req,res)=>{
     try{
         const todos=await pool.query('SELECT * FROM todos')
         res.json(todos.json)
