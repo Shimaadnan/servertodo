@@ -13,6 +13,15 @@ const jwt=require('jsonwebtoken')
 
 
 app.get('/',(req,res)=>res.send('hi'))
+app.get('/todos',async(req,res)=>{
+    try{
+        const todos=await pool.query('SELECT * FROM todos')
+        res.json(todos.json)
+    }
+    catch(err){
+        console.error(err);
+    }
+})
 
 app.get('/todos/:userEmail',async(req,res)=>{  
     const {userEmail}=req.params;
