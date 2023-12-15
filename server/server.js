@@ -3,7 +3,7 @@ const express=require('express')
 const bodyParser = require('body-parser')
 const {v4: uuidv4  }=require('uuid')
 const cors=require('cors')
-const app=express()
+const ap    p=express()
 const pool=require('./db')
 app.use(cors())
 app.use(express.json())
@@ -16,7 +16,7 @@ const jwt=require('jsonwebtoken')
 app.get('/',async(req,res)=>{
     try{
         const todos=await pool.query('SELECT * FROM todos')
-        res.json(todos)
+        res.json(todos.rows)
     }
     catch(err){
         console.error(err);
