@@ -6,10 +6,10 @@ const pool=new Pool({
     password:process.env.PASSWORD,
     host:process.env.HOST,
     port:process.env.DBPORT,
-    database:'homework'
+    database:'homework',
 
 
-    // connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 
 
 })
